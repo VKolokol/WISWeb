@@ -12,7 +12,7 @@ const DefaultSelect = ({register, key, defaultValue, collections }) => {
     console.log(value)
     return (
         <div className='select-container'>
-            <span className='select-label'>{defaultValue}</span>
+            {!value ? <span className='select-label text-placeholder'>{defaultValue}</span> : '' }
             <select required placeholder='asdasdasdasddsa' className={"form-input"} name="select" {...register} onChange={handleChange}>
                 <option disabled selected value={null}></option>
                 <option value="value1"> Значение 1 </option>

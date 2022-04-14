@@ -1,3 +1,9 @@
+input::placeholder, .text-placeholder {
+    font-family: "CircularSemiLight";
+    color: #B2B2B2;
+    font-size: 15px;
+  }
+
 .form {
     display: flex;
     flex-direction: column;
@@ -47,4 +53,20 @@ section h2 {
 }
 section div {
     position: relative;
+}
+
+.form-head {
+    text-align: center;
+}
+
+.form-head__header {
+    font-family: "CircularBold";
+    font-size: 54px;
+}
+
+.form-head__info {
+    font-family: "CircularRegular";
+    color: #B2B2B2;
+    font-size: 22px;
+    margin-bottom: 50px;
 }

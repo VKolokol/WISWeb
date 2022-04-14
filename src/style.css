@@ -7,8 +7,20 @@ body {
     box-sizing: border-box;
     color: white;
 }
+.default-btn:hover {
+    background-color: #dd6b45;
+    cursor: pointer;
+}
+.default-btn:focus {
+    background-color: #cb4c21;
+}
+
 .w-100 {
     width: 100% !important;
+}
+
+.mt-35 {
+    margin-top: 35px;
 }
 
 .container {
@@ -82,6 +94,10 @@ font-family: "CircularSemiBold";
 src: url("../public/font/EuclidCircularA-SemiBold.ttf") format("truetype");
 font-style: normal;
 font-weight: normal;
+}
+@font-face {
+    font-family: "CircularSemiLight";
+    src: url("../public/font/EuclidCircularA-Light.ttf");
 }
 
 

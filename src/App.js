@@ -2,22 +2,21 @@ import './style.css';
 
 import React from "react";
 import NavBar from "./components/NavBar";
+import AppRouter from './components/AppRouter';
+import { BrowserRouter } from 'react-router-dom';
 
-import Form from "./components/form";
-import NotificationBody from "./components/NotificationBody";
 
 
 
 function App() {
 
   return (
-      <div className="container">
-        <NavBar />
-          <Form />
-
-          {/*    {...ContentNotification.index()}*/}
-          {/*/>*/}
-      </div>
+      <BrowserRouter>
+        <div className="container">  
+          <NavBar />
+          <AppRouter />
+        </div>
+      </BrowserRouter>
 
   );
 }

@@ -7,6 +7,18 @@ option{
 }
 
 .input_file {
+    position: relative;
     padding-bottom: 5px;
     border-bottom: 1px solid rgba(216, 216, 216, 0.15);
+}
+#delete-file {
+    cursor: pointer;
+    position: absolute;
+    width: 15px;
+    top: 5%;
+    right: 5%;
+}
+
+.format-file {
+  font-size: 11px;
 }
