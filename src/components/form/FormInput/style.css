@@ -1,0 +1,12 @@
+.form-input {
+    width: 100%;
+    padding-bottom: 5px;
+}
+option{
+  background: #1F2325;
+}
+
+.input_file {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(216, 216, 216, 0.15);
+}
