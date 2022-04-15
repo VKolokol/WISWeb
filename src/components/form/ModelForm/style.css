@@ -14,6 +14,8 @@ input::placeholder, .text-placeholder {
 .form-content {
     display: flex;
     flex-direction: column;
+    width: 690px;
+    padding: 40px;
 }
 
 .form-content-container {
@@ -22,7 +24,7 @@ input::placeholder, .text-placeholder {
     width: 100%;
 }
 
-.container-grid {
+.box-form {
     display: grid;
     gap: 20px 20px;
     grid-template-rows: repeat(3, 1fr);
@@ -39,15 +41,9 @@ section div input, section div select {
 section {
     background: #1F2325;
     border-radius: 5px;
-    width: 690px;
-    padding: 40px;
-
 }
 section h2 {
      color: #fff;
-     font-family: 'Caveat', sans-serif;
-     font-size: 30px;
-     margin: 0 0 30px;
      padding: 0;
      text-align: center;
 }
@@ -62,6 +58,7 @@ section div {
 .form-head__header {
     font-family: "CircularBold";
     font-size: 54px;
+    margin: 0 0 30px;
 }
 
 .form-head__info {
@@ -69,4 +66,33 @@ section div {
     color: #B2B2B2;
     font-size: 22px;
     margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .form-head__header {
+        margin: 0 0 15px;
+        font-size: 30px;
+    }
+    .form-head__info {
+        font-size: 16px;
+    }
+    .form-content {
+
+        width: 80%;
+    }
+    .box-form {
+        display: block;
+    }
+}
+
+@media (max-width: 414px) {
+    .form {
+        margin: 30px auto;
+    }
+    input::placeholder, .text-placeholder {
+    font-size: 10px;
+  }
+    .form-content {
+        padding: 20px;
+    }
 }

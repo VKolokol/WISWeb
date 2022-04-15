@@ -32,11 +32,14 @@ body {
     flex-direction: column;
     align-items: center;
 }
+.landing-box, .form {
+    margin: 60px auto;
+}
 .nav-bar {
     display: flex;
     justify-content: space-between;
     padding: 12px;
-    margin-bottom: 60px;
+
 }
 
 .btn-share {
@@ -53,11 +56,15 @@ body {
     line-height: 28px;
     color: #B2B2B2;
 }
-.title {
+.landing-box__title {
     font-family: "CircularBold";
     font-weight: 700;
     font-size: 54px;
     line-height: 68px;
+}
+.landing-box__img {
+    margin-bottom: 24px;
+    max-width: 320px;
 }
 
 
@@ -73,6 +80,31 @@ body {
     color: white;
 }
 
+@media (max-width: 768px) {
+    .landing-box {
+        text-align: center;
+    }
+}
+@media (max-width: 360px){
+    .landing-box__title {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .landing-box__img {
+        width: 250px;
+    }
+    .text-info {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .nav-bar__logo {
+        width: 120px;
+    }
+    .btn-share {
+        padding: 2px 20px;
+    }
+}
 
 
 @font-face {

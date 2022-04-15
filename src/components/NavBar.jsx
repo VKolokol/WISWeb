@@ -6,7 +6,7 @@ import ShareButton from "./buttons/ShareButton";
 const NavBar = () => {
     return (
         <div className="nav-bar">
-            <Link to="/"><img src="/img/logo.svg"/></Link>
+            <Link to="/"><img className="nav-bar__logo" src="/img/logo.svg" alt="logo"/></Link>
             <ShareButton />
         </div>
     );

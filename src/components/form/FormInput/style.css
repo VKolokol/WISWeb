@@ -15,8 +15,8 @@ option{
     cursor: pointer;
     position: absolute;
     width: 15px;
-    top: 5%;
-    right: 5%;
+    top: 25%;
+    right: 0;
 }
 
 .format-file {

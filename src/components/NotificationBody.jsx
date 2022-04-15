@@ -1,16 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import DefaultButton from './buttons/DefaultButton';
+import {useNavigate,} from "react-router-dom";
 
 const NotificationBody = ({image, header, text, btn_event, btn_text, link}) => {
+    const history = useNavigate();
+
+    const handleRedirect = () => {
+        console.log(link)
+        history(link)
+    }
+
     return (
-        <div className="content">
-            <img src={image} width="320px"/>
-                <h1 className="title">{header}</h1>
+        <div className="content landing-box">
+            <img className="landing-box__img" src={image} alt="landing-img"/>
+                <h1 className="landing-box__title">{header}</h1>
                 {text ? <p className="text-info"> {text} </p> : ''}
-                <a href={link}>
-                    <DefaultButton classesBtn={['default-btn', 'mt-35']}>{btn_text}</DefaultButton>
-                </a>
+            <DefaultButton onClick={handleRedirect} classesBtn={['default-btn', 'mt-35']}>{btn_text}</DefaultButton>
         </div>
     );
 };

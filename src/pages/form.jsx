@@ -11,7 +11,7 @@ const Form = () => {
     const [isSuccess, setIsSuccess] = useState(true)
 
     return (
-        <div>
+        <div className="content">
             {!isSend 
                 ? <ModalForm setIsSend={setIsSend} setIsSuccess={setIsSuccess} setLoading={setIsLoading} />
                 : <div> {

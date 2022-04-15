@@ -8,21 +8,24 @@ import FileInput from "../FormInput/FileInput";
 import DateTimeInput from "../FormInput/DateTimeInput";
 import DefaultSelect from "../FormSelect/DefaultSelect";
 import DefaultButton from "../../buttons/DefaultButton";
-import createNote from '../../../API/NotificationService';
+import NotificationService from "../../../API/NotificationService";
 
 
 const ModalForm = ({setIsSuccess, setIsSend, setLoading}) => {
     const { register, reset, setValue, formState: { errors }, handleSubmit } = useForm()
+    let note = new NotificationService()
 
     const onSubmit = (data) => {
         const array = Object.entries(data);
         const formData = new FormData()
-        
+        console.log(data)
+
         array.forEach((el) => {
             formData.append(el[0], el[1])
         })
-        
-        createNote(formData, setIsSuccess, setLoading);
+
+
+        note.createNote(formData, setIsSuccess,setLoading)
         setIsSend(true)
         
         reset({
@@ -33,20 +36,20 @@ const ModalForm = ({setIsSuccess, setIsSend, setLoading}) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='form'>
             <section className='form-content'>
-                 <div class='form-head'>
-                     <h2 class='form-head__header'>Создать уведомление</h2>
-                     <p class='form-head__info'>Уведомление о собеседовании</p>
+                 <div className='form-head'>
+                     <h2 className='form-head__header'>Создать уведомление</h2>
+                     <p className='form-head__info'>Уведомление о собеседовании</p>
                  </div>
  
-                <div onSubmit={handleSubmit(onSubmit)} className="container-grid">
+                <div onSubmit={handleSubmit(onSubmit)} className="box-form">
                      <TextInput register={
                             register('title', {required: true})
                         } placeholder='* Название'/>
 
-                     <TextInput register={register('name', { required: true })}  placeholder='* Фамилия Имя Отчество'/>
+                     <TextInput register={register('full_name', { required: true })}  placeholder='* Фамилия Имя Отчество'/>
                      <DefaultSelect register={register('master', { required: true })}  defaultValue='* Кто проводит'/>
                      <DefaultSelect register={register('responsible', { required: true })} defaultValue='* Ответственный'/>
-                     <DateTimeInput register={register('date', { required: true })} placeholder="* Дата" />
+                     <DateTimeInput register={register('execution_time', { required: true })} placeholder="* Дата" />
                      <FileInput imgClip='/img/clip.svg' label='Загрузите резюме' setValue={setValue} />
                  </div>
  
