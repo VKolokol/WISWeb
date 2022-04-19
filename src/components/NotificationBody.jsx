@@ -1,12 +1,12 @@
 import React from 'react';
 import DefaultButton from './buttons/DefaultButton';
-import {useNavigate,} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const NotificationBody = ({image, header, text, btn_event, btn_text, link}) => {
+    const params = useParams()
     const history = useNavigate();
 
     const handleRedirect = () => {
-        console.log(link)
         history(link)
     }
 

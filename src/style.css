@@ -43,6 +43,7 @@ body {
 }
 
 .btn-share {
+    cursor: pointer;
     background: none;
     padding: 14px 40px;
     border: 1px solid #FF6C3A;

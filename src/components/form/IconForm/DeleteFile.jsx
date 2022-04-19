@@ -3,7 +3,7 @@ import React from 'react';
 const DeleteFile = ({ value }) => {
 
     return (
-        <svg className="block">
+        <svg className="block" width="11" height="12">
             <svg width="11" height="12">
                 <defs>
                     <symbol id="icon-delete">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { Navigate } from "react-router-dom";
 import ResultPage from './result';
 import ModalForm from '../components/form/ModelForm/ModelForm';
 import Loader from '../components/Loader/Loader';
@@ -16,7 +16,7 @@ const Form = () => {
                 ? <ModalForm setIsSend={setIsSend} setIsSuccess={setIsSuccess} setLoading={setIsLoading} />
                 : <div> {
                     !isLoading 
-                        ? <ResultPage isSuccess={isSuccess}/> 
+                        ? <Navigate to={`/result/${isSuccess}`} replace={true} />
                         : <Loader /> 
                     }
                 </div>

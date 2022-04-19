@@ -12,10 +12,22 @@ input::placeholder, .text-placeholder {
 }
 
 .form-content {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 690px;
     padding: 40px;
+}
+
+.close-form {
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.close-form__img {
+    width: 36px;
 }
 
 .form-content-container {
@@ -77,8 +89,10 @@ section div {
         font-size: 16px;
     }
     .form-content {
-
         width: 80%;
+    }
+    .close-form__img {
+        width: 26px;
     }
     .box-form {
         display: block;
