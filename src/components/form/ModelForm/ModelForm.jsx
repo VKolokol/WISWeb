@@ -16,11 +16,8 @@ import InterviewerList from "../../../constants/InterviewerList";
 
 const ModalForm = ({setIsSuccess, setIsSend, setLoading}) => {
     const { register, reset, setValue, handleSubmit } = useForm()
-
-    let note = new NotificationService()
-
-
     const history = useNavigate();
+    let note = new NotificationService()
 
     const closeForm = () => {
         history('/')
@@ -34,13 +31,12 @@ const ModalForm = ({setIsSuccess, setIsSend, setLoading}) => {
             id_interviewer: Number(data.id_interviewer)
         }
 
-        const fd = new FormData();
+        const fd = new FormData('type_task', 0);
         const array = Object.entries(newData);
 
         array.forEach((el) => {
             fd.append(...el)
         })
-        fd.append('type_task', 0)
 
         note.createNote(fd, setIsSuccess, setLoading)
         setIsSend(true)
@@ -53,7 +49,9 @@ const ModalForm = ({setIsSuccess, setIsSend, setLoading}) => {
     return (
             <form onSubmit={handleSubmit(onSubmit)} className='form'>
                 <section className='form-content'>
-                    <div className="close-form" onClick={closeForm}> <img className="close-form__img" src="/img/Close.png" alt='close-form'/></div>
+                    <div className="close-form" onClick={closeForm}>
+                        <img className="close-form__img" src="/img/Close.png" alt='close-form'/>
+                    </div>
                      <div className='form-head'>
                          <h2 className='form-head__header'>Создать уведомление</h2>
                          <p className='form-head__info'>Уведомление о собеседовании</p>
@@ -64,10 +62,22 @@ const ModalForm = ({setIsSuccess, setIsSend, setLoading}) => {
                                 register('title', {required: false})
                             } placeholder='* Название'/>
 
-                         <TextInput register={register('full_name', { required: false })}  placeholder='* Фамилия Имя Отчество'/>
-                         <DefaultSelect register={register('id_interviewer', { required: false })}  defaultValue='* Кто проводит' collections={InterviewerList}/>
-                         <DefaultSelect register={register('id_responsible', { required: false })} defaultValue='* Ответственный' collections={ResponsibleList}/>
-                         <DateTimeInput register={register('execution_time', { required: false })} placeholder="* Дата" />
+                         <TextInput
+                             register={register('full_name', { required: true })}
+                             placeholder='* Фамилия Имя Отчество'
+                         />
+                         <DefaultSelect
+                             register={register('id_interviewer', { required: true})}
+                             defaultValue='* Кто проводит' collections={InterviewerList}
+                         />
+                         <DefaultSelect
+                             register={register('id_responsible', { required: true })}
+                             defaultValue='* Ответственный' collections={ResponsibleList}
+                         />
+                         <DateTimeInput
+                             register={register('execution_time', { required: true })}
+                             placeholder="* Дата"
+                         />
                          <FileInput imgClip='/img/clip.svg' label='Загрузите резюме' setValue={setValue} />
                      </div>
 

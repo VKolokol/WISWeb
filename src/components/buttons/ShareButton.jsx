@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShareButton = () => {
+const ShareButton = ({setIsCopied}) => {
 
     const copyURL = () => {
         const el = document.createElement("input");
@@ -9,7 +9,7 @@ const ShareButton = () => {
         el.select();
         document.execCommand("copy");
         document.body.removeChild(el);
-        alert('Ссылка скопирована!')
+        setIsCopied(true)
   }
     return (
         <div>

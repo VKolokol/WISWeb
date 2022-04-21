@@ -35,6 +35,16 @@ body {
 .landing-box, .form {
     margin: 60px auto;
 }
+.navigation {
+    position: relative;
+}
+.nav-message {
+    font-family: "CircularRegular" !important;
+    background-color: #dd6b45 !important;
+    position: absolute;
+    top: 15%;
+    left: 40%;
+}
 .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -47,6 +57,13 @@ body {
     background: none;
     padding: 14px 40px;
     border: 1px solid #FF6C3A;
+}
+
+.btn-share:hover {
+    background-color: rgba(203, 76, 33, 0.2);;
+}
+.btn-share:focus {
+    background-color: rgba(179, 65, 0, 0.3);;
 }
 .text-info {
     margin-top: 15px;
@@ -111,22 +128,16 @@ body {
 @font-face {
 font-family: "CircularRegular";
 src: url("../public/font/EuclidCircularA-Regular.ttf") format("truetype");
-font-style: normal;
-font-weight: normal;
 }
 
 @font-face {
 font-family: "CircularBold";
 src: url("../public/font/EuclidCircularA-Bold.ttf") format("truetype");
-font-style: normal;
-font-weight: normal;
 }
 
 @font-face {
 font-family: "CircularSemiBold";
 src: url("../public/font/EuclidCircularA-SemiBold.ttf") format("truetype");
-font-style: normal;
-font-weight: normal;
 }
 @font-face {
     font-family: "CircularSemiLight";

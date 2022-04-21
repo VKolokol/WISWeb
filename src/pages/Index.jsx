@@ -7,7 +7,7 @@ const Index = () => {
 
     return (
         <div>
-            <NotificationBody {...contentNotification.index()} link='/notification-form'  />
+            <NotificationBody {...contentNotification.index()} link='/notification-about-interview'  />
         </div>
     );
 };

@@ -2,12 +2,12 @@ import React from 'react';
 import { Route, Routes} from "react-router-dom";
 import Index from '../pages/Index';
 import ResultPage from '../pages/result';
-import Form from '../pages/form';
+import NotificationAboutInterview from '../pages/NotificationAboutInterview';
 
 const AppRouter = () => {
     return (
         <Routes>
-            <Route path="/notification-form" element={<Form />} />
+            <Route path="/notification-about-interview" element={<NotificationAboutInterview />} />
             <Route path="/result/:success" element={<ResultPage />} />
             <Route path={"/"} element={<Index />} />
         </Routes>

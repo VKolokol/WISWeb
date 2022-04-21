@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Navigate } from "react-router-dom";
-import ResultPage from './result';
+import React, { useState } from 'react';
+import {Navigate} from "react-router-dom";
 import ModalForm from '../components/form/ModelForm/ModelForm';
 import Loader from '../components/Loader/Loader';
 
 
-const Form = () => {
-    const [isSend, setIsSend] = useState(false)
-    const [isLoading, setIsLoading] = useState(true)
-    const [isSuccess, setIsSuccess] = useState(true)
+const NotificationAboutInterview = () => {
+    const [isSend, setIsSend] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isSuccess, setIsSuccess] = useState(true);
 
     return (
         <div className="content">
@@ -25,4 +24,4 @@ const Form = () => {
     );
 };
 
-export default Form;
+export default NotificationAboutInterview;
