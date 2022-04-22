@@ -1,11 +1,5 @@
 export default class contentNotification  {
-    static index() {
-        return {
-            image: '/img/illustration.svg',
-            header: "Создать уведомление",
-            btn_text: "СОЗДАТЬ"
-        }
-    }
+
     static success() {
         return {
             image: '/img/Success.svg',
@@ -16,7 +10,7 @@ export default class contentNotification  {
     }
     static error() {
         return {
-            image: '/img/illustration.svg',
+            image: '/img/illustration-error.svg',
             header: "Что-то пошло не так...",
             text: "Произошла ошибка, попробуйте вернуться на главную и повторить запрос",
             btn_text: "НА ГЛАВНУЮ"

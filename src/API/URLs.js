@@ -1,5 +1,5 @@
 const URLs = {
-    task: '',
+    task: 'url',
 };
 
 export default URLs;

@@ -1,0 +1,25 @@
+.menu_item{
+    background: #1F2325;
+    width: 600px;
+    height: 90px;
+    display: flex;
+    padding: 30px 25px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.menu_head {
+    display: flex;
+    align-items: center;
+}
+
+.menu_head__img {
+    width: 40px;
+    margin-right: 20px;
+}
+.menu_head__title {
+    font-family: "CircularBold";
+    font-weight: 600;
+    font-size: 24px;
+}

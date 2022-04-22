@@ -14,7 +14,7 @@ const ResultPage = () => {
         }
         return contentNotification.error();
     }
-    const link = isSuccess ? '/notification-about-interview' : '/'
+    const link = isSuccess === 'true' ? '/notification-about-interview' : '/'
 
     return (
         <div>

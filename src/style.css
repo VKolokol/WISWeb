@@ -51,6 +51,24 @@ body {
     padding: 12px;
 
 }
+.main_logo {
+    font-family: "CircularBold";
+    width: 519px;
+    height: 182px;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 91px;
+    margin-bottom: 50px;
+}
+
+.main_box {
+    padding: 90px 0;
+    margin-top: 50px;
+    background-image: url(../public/img/illustration.svg);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 50%;
+}
 
 .btn-share {
     cursor: pointer;

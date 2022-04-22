@@ -1,13 +1,14 @@
 import React from 'react';
 
-import NotificationBody from '../components/NotificationBody';
-import contentNotification from '../constants/ContentNotification';
+import Menu from "../components/menu/Menu";
+import MenuItems from "../constants/MenuItems";
 
 const Index = () => {
 
     return (
-        <div>
-            <NotificationBody {...contentNotification.index()} link='/notification-about-interview'  />
+        <div className="main_box">
+            <h1 className="main_logo">Создать уведомление</h1>
+            <Menu menu={MenuItems}/>
         </div>
     );
 };
