@@ -1,4 +1,4 @@
-input::placeholder, .text-placeholder {
+input::placeholder, textarea::placeholder, .text-placeholder {
     font-family: "CircularSemiLight";
     color: #B2B2B2;
     font-size: 15px;
@@ -41,14 +41,14 @@ input::placeholder, .text-placeholder {
     gap: 20px 20px;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 25px;
 }
-section div input, section div select {
+section div input, section div select, section div textarea {
     font-size: 16px;
     background: transparent;
     border: none;
     border-bottom: 1px solid rgba(216, 216, 216, 0.15);
     outline: none;
-    margin-bottom: 35px;
 }
 section {
     background: #1F2325;

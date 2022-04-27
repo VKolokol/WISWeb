@@ -2,13 +2,13 @@ import React from "react";
 
 import './style.css';
 
-const TextInput = ({register, key, placeholder}) => {
+const TextInput = ({register, type="text", placeholder}) => {
     return (
         <div>
             <input
                 {...register}
                 className='form-input'
-                type='text'
+                type={type}
                 placeholder={placeholder}
             />
         </div>

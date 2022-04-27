@@ -9,7 +9,7 @@ const MenuItems =  [
             title: "Удаленная работа",
             symbol: 'img/small-calendar.svg',
             alt: 'calendar',
-            link: 'url'
+            link: '/notification-about-work'
         }
     ]
 

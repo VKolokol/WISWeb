@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 
 import './style.css';
 
-const ModalForm = ({children, setIsSuccess, reset, handleSubmit, setIsSend, setLoading}) => {
+const ModalForm = ({children, type, setIsSuccess, reset, handleSubmit, setIsSend, setLoading}) => {
     const history = useNavigate();
     let note = new NotificationService()
 
@@ -18,7 +18,7 @@ const ModalForm = ({children, setIsSuccess, reset, handleSubmit, setIsSend, setL
 
         const newData = {
             ...data,
-            type_task: 0,
+            type_task: type,
             id_responsible: Number(data.id_responsible),
             id_interviewer: Number(data.id_interviewer)
         }
