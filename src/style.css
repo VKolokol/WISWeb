@@ -32,7 +32,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.landing-box, .form {
+.landing-box {
     margin: 60px auto;
 }
 .navigation {
@@ -62,7 +62,6 @@ body {
 }
 
 .main_box {
-    padding: 90px 0;
     margin-top: 50px;
     background-image: url(../public/img/illustration.svg);
     background-repeat: no-repeat;
@@ -119,6 +118,11 @@ body {
 @media (max-width: 768px) {
     .landing-box {
         text-align: center;
+    }
+}
+@media (max-width: 600px) {
+    .m-box {
+        padding: 0 10px;
     }
 }
 @media (max-width: 360px){

@@ -10,7 +10,7 @@ const AppRouter = () => {
         <Routes>
             <Route path="/notification-about-interview" element={<NotificationAboutInterview />} />
             <Route path="/notification-about-work" element={<NotificationAboutWork />} />
-            <Route path="/result/:success" element={<ResultPage />} />
+            <Route path="/result/:notification/:success" element={<ResultPage />} />
             <Route path={"/"} element={<Index />} />
         </Routes>
     );

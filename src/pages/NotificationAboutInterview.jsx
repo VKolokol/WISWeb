@@ -9,6 +9,7 @@ import InterviewerList from "../constants/InterviewerList";
 import ResponsibleList from "../constants/ResponsibleList";
 import DateTimeInput from "../components/form/FormInput/DateTimeInput";
 import FileInput from "../components/form/FormInput/FileInput";
+import URLs from "../API/URLs";
 
 
 const NotificationAboutInterview = () => {
@@ -16,6 +17,7 @@ const NotificationAboutInterview = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isSuccess, setIsSuccess] = useState(true);
     const { register, reset, setValue, handleSubmit } = useForm();
+    const notification = 'interview'
 
     return (
         <div className="content main_box">
@@ -27,7 +29,9 @@ const NotificationAboutInterview = () => {
                     type={0}
                     handleSubmit={handleSubmit}
                     setIsSuccess={setIsSuccess}
-                    setLoading={setIsLoading}>
+                    setLoading={setIsLoading}
+                    url={URLs.task}
+                >
                     <TextInput register={
                                 register('title', {required: false})
                             } placeholder='* Название'/>
@@ -37,11 +41,11 @@ const NotificationAboutInterview = () => {
                              placeholder='* Фамилия Имя Отчество'
                          />
                          <DefaultSelect
-                             register={register('id_interviewer', { required: true})}
+                             register={register('id_mentor', { required: true})}
                              defaultValue='* Кто проводит' collections={InterviewerList}
                          />
                          <DefaultSelect
-                             register={register('id_responsible', { required: true })}
+                             register={register('id_hr', { required: true })}
                              defaultValue='* Ответственный' collections={ResponsibleList}
                          />
                          <DateTimeInput
@@ -52,7 +56,7 @@ const NotificationAboutInterview = () => {
                 </ModalForm>
                 : <div> {
                     !isLoading 
-                        ? <Navigate to={`/result/${isSuccess}`} replace={true} />
+                        ? <Navigate to={`/result/${notification}/${isSuccess}`} replace={true} />
                         : <Loader /> 
                     }
                 </div>

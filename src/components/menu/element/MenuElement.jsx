@@ -17,7 +17,7 @@ const MenuElement = ({symbol, alt, title, link}) => {
                 <img className="menu_head__img" src={symbol} alt={alt} />
                 <p className="menu_head__title"> {title} </p>
             </div>
-            <DefaultButton onClick={redirectToForm}> СОЗДАТЬ <img src="img/Path.png" alt="pointer"/></DefaultButton>
+            <DefaultButton classesBtn={['default-btn', 'menu_btn']} onClick={redirectToForm}> СОЗДАТЬ <img src="img/Path.png" alt="pointer"/></DefaultButton>
         </div>
     );
 };

@@ -21,5 +21,11 @@ option{
 }
 
 .format-file {
+    margin-bottom: 0px;
   font-size: 11px;
+}
+
+.comments {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }

@@ -4,7 +4,7 @@ import './style.css';
 
 const TextAreaInput = ({register, placeholder, maxLength}) => {
     return (
-        <div>
+        <div className="comments">
             <label>
                 <textarea
                     {...register} 
@@ -14,7 +14,7 @@ const TextAreaInput = ({register, placeholder, maxLength}) => {
                     rows="1"
                     style={{resize:"none"}}>
                 </textarea>
-                <label className="text-placeholder format-file">File requirements: pdf, doc, docx</label>
+                <label className="text-placeholder format-file">Не более 100 символов</label>
             </label>
         </div>
     )

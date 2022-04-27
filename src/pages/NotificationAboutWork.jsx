@@ -9,6 +9,7 @@ import TextAreaInput from '../components/form/FormInput/TextAreaInput';
 import DefaultSelect from "../components/form/FormSelect/DefaultSelect";
 import InterviewerList from "../constants/InterviewerList";
 import ResponsibleList from "../constants/ResponsibleList";
+import URLs from "../API/URLs";
 
 
 const NotificationAboutWork = () => {
@@ -16,6 +17,7 @@ const NotificationAboutWork = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isSuccess, setIsSuccess] = useState(true);
     const { register, reset, handleSubmit } = useForm();
+    const notification = 'workFromHome'
 
     return (
         <div className="content main_box">
@@ -28,32 +30,33 @@ const NotificationAboutWork = () => {
                     handleSubmit={handleSubmit}
                     setIsSuccess={setIsSuccess}
                     setLoading={setIsLoading}
+                    url={URLs.work}
                 >
                          <TextInput
                              register={register('full_name', { required: true })}
                              placeholder='* Фамилия Имя Отчество'
                          />
                          <DateTimeInput
-                             register={register('execution_time', { required: true })}
+                             register={register('day_off_datetime', { required: true })}
                              placeholder="* Дата"
                          />
                          <DefaultSelect
-                             register={register('id_interviewer', { required: true})}
+                             register={register('id_mentor', { required: true})}
                              defaultValue='* Кто проводит' collections={InterviewerList}
                          />
                          <DefaultSelect
-                             register={register('id_responsible', { required: true })}
+                             register={register('id_hr', { required: true })}
                              defaultValue='* Ответственный' collections={ResponsibleList}
                          />
                          <TextAreaInput
-                            register={register('comments', { required: true })}
+                            register={register('comment', { required: true })}
                             placeholder="* Комментарий"
                         />
                         
                 </ModalForm>
                 : <div> {
                     !isLoading 
-                        ? <Navigate to={`/result/${isSuccess}`} replace={true} />
+                        ? <Navigate to={`/result/${notification}/${isSuccess}`} replace={true} />
                         : <Loader /> 
                     }
                 </div>

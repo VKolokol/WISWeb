@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 
 import './style.css';
 
-const ModalForm = ({children, type, setIsSuccess, reset, handleSubmit, setIsSend, setLoading}) => {
+const ModalForm = ({children, type, setIsSuccess, reset, handleSubmit, setIsSend, setLoading, url}) => {
     const history = useNavigate();
     let note = new NotificationService()
 
@@ -17,10 +17,11 @@ const ModalForm = ({children, type, setIsSuccess, reset, handleSubmit, setIsSend
     const onSubmit = (data) => {
 
         const newData = {
+            title: 'work',
             ...data,
             type_task: type,
-            id_responsible: Number(data.id_responsible),
-            id_interviewer: Number(data.id_interviewer)
+            id_hr: Number(data.id_hr),
+            id_mentor: Number(data.id_mentor)
         }
 
         const fd = new FormData();
@@ -30,7 +31,7 @@ const ModalForm = ({children, type, setIsSuccess, reset, handleSubmit, setIsSend
             fd.append(...el)
         })
 
-        note.createNote(JSON.stringify(newData), setIsSuccess, setLoading)
+        note.createNote(url, fd, setIsSuccess, setLoading)
         setIsSend(true)
         
         reset({

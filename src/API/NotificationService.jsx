@@ -1,11 +1,10 @@
 import axios from "axios";
-import URLs from "./URLs";
 
 export default class NotificationService {
 
-     createNote(formData, setIsSuccess, setIsLoading) {
+     createNote( url, formData, setIsSuccess, setIsLoading) {
 
-        axios.post(URLs.task, formData, {
+        axios.post(url, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 },
